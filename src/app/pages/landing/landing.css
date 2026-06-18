@@ -1,0 +1,45 @@
+.reserve-strip {
+    background: linear-gradient(135deg, var(--color-crimson-deep) 0%, var(--color-charcoal) 50%, var(--color-navy-mid) 100%);
+    padding: 5rem 2rem;
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid rgba(201, 168, 76, 0.2);
+    border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+    text-align: center;
+}
+
+.reserve-strip::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C9A84C' fill-opacity='0.03'%3E%3Cpath d='M30 0 L60 30 L30 60 L0 30 Z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.reserve-strip-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.reserve-strip h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 300;
+    color: var(--color-ivory);
+    margin-bottom: 1rem;
+}
+
+.reserve-strip p {
+    font-size: 1.1rem;
+    color: var(--color-text-light);
+    max-width: 500px;
+    margin: 0 auto 2rem;
+    line-height: 1.8;
+}
+
+.reserve-strip-content .action-container{
+    width: 400px;
+}

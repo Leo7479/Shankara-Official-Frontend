@@ -1,0 +1,102 @@
+footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 2rem 2rem;
+    border-top: 1px solid rgba(201, 168, 76, 0.15);
+    background-color: var(--color-dark);
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+}
+footer div{
+    width: 100%;
+    max-width: 1200px;
+}
+div.links-section{
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    column-gap: 2rem;
+    width: 100%;
+    max-width: 1400px;
+}
+
+div.links-section div.about-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    max-width: 300px;
+    gap: 20px;
+}
+
+div.links-section div.about-card div.image-container{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+div.links-section div.about-card div.image-container img#logo-image{
+    width: 44px;
+}
+
+div.links-section div.about-card div.image-container img#logo-text{
+    width: 140px;
+}
+
+div.links-section div.about-card div.description-container{
+    width: 100%;
+    text-wrap: wrap;
+    line-height: 2rem;
+}
+
+div.links-section div.links-cards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+div.links-section div.links-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+div.links-section div.links-card h3{
+    color: var(--color-gold);
+    text-transform: uppercase;
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    font-weight: 500;
+}
+
+div.links-section div.links-card ul{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 10px;
+    letter-spacing: 0.1em;
+}
+
+div.links-section div.links-card ul li a{
+    cursor: pointer;
+    transition: color 0.15s ease;
+    color: var(--color-gold-light);
+    text-decoration: none;
+}
+
+div.links-section div.links-card ul li a:hover{
+    color: var(--color-gold);
+}
+
+div.copyright-section{
+    color: var(--color-text-light);
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+}

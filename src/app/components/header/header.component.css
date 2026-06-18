@@ -1,0 +1,101 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+    padding: 0.5rem 3rem;
+    border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+    background: linear-gradient(180deg, rgba(10, 10, 26, 0.98) 0%, rgba(10, 10, 26, 0.85) 100%);
+    backdrop-filter: blur(12px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+div#header-space-blocker{
+    width: 100%;
+    height: 00px; 
+    /* Make the height non-zero to view content under header */
+    background-color: transparent;
+    z-index: -1;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+div#logo-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+div#logo-section img#logo-image {
+    width: 44px;
+}
+
+div#logo-section img#logo-text {
+    width: 150px;
+}
+
+div#nav-section {
+    width: 50%;
+    max-width: max-content;
+    flex-shrink: 1;
+}
+
+div#nav-section nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    width: 100%;
+    font-size: 1.2rem;
+    gap: 2.2rem;
+}
+
+div#nav-section nav ul li {
+    font-family: 'Crimson Pro', serif;
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
+    color: var(--color-text-light);
+    text-decoration: none;
+    text-transform: uppercase;
+    height: 100%;
+}
+
+div#nav-section nav ul li:not(.fill-up-button) a {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    color: var(--color-primary);
+    text-decoration: none;
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
+}
+
+div#nav-section nav ul li:not(.fill-up-button) a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 110%;
+    width: 0%;
+    height: 1px;
+    background-color: var(--color-gold-light);
+    transform: translateX(-50%);
+    transform-origin: center;
+    transition: all 0.15s ease;
+}
+
+div#nav-section nav ul li:not(.fill-up-button) a:hover {
+    color: var(--color-gold-light);
+}
+
+div#nav-section nav ul li:not(.fill-up-button) a:hover::after {
+    width: 100%;
+}
+

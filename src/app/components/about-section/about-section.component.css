@@ -1,0 +1,133 @@
+section#about-section{
+    background: linear-gradient(180deg, var(--color-navy) 0%, var(--color-navy-mid) 100%);
+    position: relative;
+    width: 100%;
+    height: fit-content;
+}
+
+div.about-section-container{
+    width: 100%;
+    height: fit-content;
+    margin: auto;
+    max-width: 1200px;
+    display: grid;
+    place-items: center;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+}
+
+div.image-container{
+    width: 100%;
+    height: 100%;
+    max-height: 700px;
+    background: linear-gradient(145deg, var(--color-crimson-deep) 0%, var(--color-charcoal) 60%, #0A0A1A 100%);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(201, 168, 76, 0.2);
+    padding: 1rem;
+    overflow: visible;
+}
+
+div.mandala-canvas{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.7;
+    border: 1px solid rgba(201, 168, 76, 0.2);
+}
+
+div.mandala-canvas svg{
+    width: 80%;
+    height: 100%;
+}
+
+div.image-container div.foot-tag{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem 1rem;
+    background-color: var(--color-gold);
+    position: absolute;
+    bottom: -1.5rem;
+    right: -1.5rem;
+    aspect-ratio: 1/1;
+    height: fit-content;
+}
+
+div.foot-tag span{
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    font-weight: 600;
+    line-height: 1;
+}
+
+div.foot-tag p{
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-align: center;
+}
+
+span#tag{
+    color: var(--color-text-light);
+    line-height: 1.85;
+    margin-bottom: 1rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    font-family: "Crimson Pro", serif;
+}
+
+h2#title{
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--color-ivory);
+}
+
+p.description{
+    font-size: 1.1rem;
+    line-height: 1.85;
+    color: var(--color-text-light);
+    margin-bottom: 1.2rem;
+}
+
+p.description:first-of-type{
+    margin-top: 2rem;
+}
+
+p.description:last-of-type{
+    margin-bottom: 2rem;
+}
+
+div.about-cards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 2rem;
+}
+
+div.about-card{
+    border-top: 2px solid var(--color-gold);
+    padding: 20px 0;
+}
+
+div.about-card h4{
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    color: var(--color-gold-light);
+    margin-bottom: 0.3rem;
+}
+
+div.about-card p{
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    line-height: 1.6;
+}
+
