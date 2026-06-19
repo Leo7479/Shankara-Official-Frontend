@@ -2,6 +2,11 @@ section#artists-section{
     background-color: var(--color-charcoal);
     position: relative;
     overflow: hidden;
+    background-image: url('/assets/images/stars-background.png');
+    background-repeat: repeat-x;
+    background-size: contain;
+    background-position: center center;
+    
 }
 
 div.artists-section-container{
@@ -9,6 +14,7 @@ div.artists-section-container{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: var(--color-charcoal);
 }
 
 span.tag{
