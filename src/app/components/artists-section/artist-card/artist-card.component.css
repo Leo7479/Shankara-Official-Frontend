@@ -1,0 +1,85 @@
+div.artist-card{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    max-height: 700px;
+    max-width: 400px;
+    padding-bottom: 1.5rem;
+    border: 1px solid white;
+    background: rgba(10, 10, 26, 0.7);
+    border: 1px solid rgba(201, 168, 76, 0.15);
+    transition: all 0.35s ease-out;
+}
+
+div.artist-card::after{
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(to right, var(--color-crimson), var(--color-gold), var(--color-crimson));
+    transition: width 0.35s ease-out;
+}
+
+div.artist-card:hover{
+    border: 1px solid var(--color-gold);
+}
+
+div.artist-card:hover::after{
+    width: 100%;
+}
+
+div.artist-card div.artist-image-container{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+div.artist-card div.artist-image-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+
+div.artist-card div.artist-info{
+    padding: 1.5rem;
+    height: 40%;
+    overflow: hidden;
+}
+
+div.artist-card div.artist-info .artist-name{
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--color-ivory);
+}
+
+div.artist-card div.artist-info .artist-instruments{
+    color: var(--color-gold);
+    display: inline-block;
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin: 0.3rem 0 0.8rem;
+}
+
+div.artist-card div.artist-info .artist-description{
+    font-size: 0.95rem;
+    color: var(--color-text-light);
+    line-height: 1.65;
+    margin: 0;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+}

@@ -1,0 +1,14 @@
+<section id="artists-section">
+    <div class="artists-section-container">
+        <span class="tag" intersectionObserve>The Artists</span>
+        <h2 class="section-heading" intersectionObserve>Six Masters, One Voice</h2>
+        <div class="gold-divider" intersectionObserve>✦</div>
+
+        <div class="artists-grid">
+            <!-- <app-artist-card *ngFor="let artist of artistsData" [data]='artist'></app-artist-card> -->
+            @for(artist of artistsData; track artist.id){
+                <app-artist-card [data]="artist"></app-artist-card>
+            }
+        </div>
+    </div>
+</section>

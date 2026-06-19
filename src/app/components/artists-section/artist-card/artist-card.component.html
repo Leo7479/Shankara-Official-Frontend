@@ -1,0 +1,10 @@
+<div class="artist-card" intersectionObserve>
+    <div class="artist-image-container">
+        <img [src]="'assets/images/members/'+data.image" [alt]="data.image" />
+    </div>
+    <div class="artist-info">
+        <h2 class="artist-name">{{ data.name }}</h2>
+        <span class="artist-instruments">{{ data.instrument | seperate }}</span>
+        <p class="artist-description">A disciple of the Etawah gharana, Govind Rao has been performing for over 40 years. His mastery of vilambit and drut compositions has earned him the Padma Shri and recognition across four continents. </p>
+    </div>
+</div>

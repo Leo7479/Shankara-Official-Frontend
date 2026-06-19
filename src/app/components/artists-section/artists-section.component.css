@@ -1,0 +1,41 @@
+section#artists-section{
+    background-color: var(--color-charcoal);
+    position: relative;
+    overflow: hidden;
+}
+
+div.artists-section-container{
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+span.tag{
+    font-family: 'Crimson Pro', serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    opacity: 0.9;
+}
+
+.section-heading{
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--color-ivory);
+}
+
+.artists-grid{
+    display: grid;
+    width: 100%;
+    height: fit-content;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 1fr 1fr;
+    column-gap: 2rem;
+    row-gap: 2rem;
+}
