@@ -1,10 +1,11 @@
 import { Component, ElementRef, Input, OnInit } from "@angular/core";
 import { ShowDetail } from "../../../types/show-detail";
+import { IntersectionObserverDirective } from "../../../directives/intersection-observer.directive";
 
 @Component({
     selector: 'app-show-card',
     standalone: true,
-    imports: [],
+    imports: [IntersectionObserverDirective],
     templateUrl: './show-card.component.html',
     styleUrl: './show-card.component.css'
 })
