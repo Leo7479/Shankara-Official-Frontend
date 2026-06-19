@@ -1,0 +1,24 @@
+<div class="show-card">
+    <div class="show-card-progress-dot"></div>
+    <div class="show-date-container">
+        <div class="show-date-content">
+            <span class="show-date">{{ showDate }}</span>
+            <span class="show-month-year">{{ showMonthYear }}</span>
+        </div>
+    </div>
+    <div class="show-details-container">
+        <h2 class="show-title">{{ data.name }}</h2>
+        <span class="tag">{{ data.location }}</span>
+        <p class="description">{{ data.description }}</p>
+        <div class="show-tag-container">
+            @for(t of data.tags;track $index){
+            <span class="show-tag">{{ t }}</span>
+            }
+        </div>
+    </div>
+    <div class="show-watch-container">
+        <div class="primary-button" (click)="onClickWatchNow()">
+            <a>Watch Now</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<section id="shows-section">
+    <div class="shows-section-container">
+        <span class="tag" intersectionObserve>The Legacy</span>
+        <h2 class="section-heading" intersectionObserve>Evenings Remembered</h2>
+        <div class="gold-divider" intersectionObserve>❧</div>
+        <p class="header-tag">Each performance leaves behind a story — of ragas that filled the air, audiences moved to silence, and music that refused to end when the notes did.</p>
+
+        <div class="show-details-container">
+            <div class="show-sidebar"></div>
+            <div class="show-cards-container">
+                @for(show of showsData;track show.id){
+                    <app-show-card [data]="show"></app-show-card>
+                }
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,11 +1,11 @@
 import { Injectable } from "@angular/core";
-import { Artist } from "../types/artist";
+import { ArtistDetail } from "../types/artist-detail";
 
 @Injectable({
     providedIn: 'root'
 })
 export class ArtistsService{
-    private _data : Artist[] = [
+    private _data : ArtistDetail[] = [
         {id: 1, name: "Ayush Lala", instrument: ["Santoor"], image: "Ayush-Lala.png"},
         {id: 2, name: "Apurba Sikdar", instrument: ["Keys"], image: "Apurba-Sikdar.png"},
         {id: 3, name: "Joydev Banerjee", instrument: ["Tabla"], image: "Joydev-Banerjee.png"},
@@ -18,7 +18,7 @@ export class ArtistsService{
         return this._data;
     }
 
-    set data(artistsList: Artist[]){
+    set data(artistsList: ArtistDetail[]){
         this._data = artistsList;
     }
 }

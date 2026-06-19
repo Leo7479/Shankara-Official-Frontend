@@ -13,6 +13,7 @@ div.artist-card{
     background: rgba(10, 10, 26, 0.7);
     border: 1px solid rgba(201, 168, 76, 0.15);
     transition: all 0.35s ease-out;
+    cursor: pointer;
 }
 
 div.artist-card::after{

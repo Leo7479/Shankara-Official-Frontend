@@ -1,5 +1,5 @@
 import { Component, inject } from "@angular/core";
-import { Artist } from "../../types/artist";
+import { ArtistDetail } from "../../types/artist-detail";
 import { ArtistsService } from "../../services/artists.service";
 import { ArtistCard } from "./artist-card/artist-card.component";
 import { CommonModule } from "@angular/common";
@@ -13,7 +13,7 @@ import { IntersectionObserverDirective } from "../../directives/intersection-obs
     styleUrl: './artists-section.component.css'
 })
 export class ArtistsSection {
-    artistsData !: Artist[];
+    artistsData !: ArtistDetail[];
     private artistsService = inject(ArtistsService);
 
     constructor() {

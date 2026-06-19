@@ -1,5 +1,5 @@
 import { Component, Input } from "@angular/core";
-import { Artist } from "../../../types/artist";
+import { ArtistDetail } from "../../../types/artist-detail";
 import { ValueSeperator } from "../../../pipes/value-seperator.pipe";
 import { IntersectionObserverDirective } from "../../../directives/intersection-observer.directive";
 
@@ -11,7 +11,7 @@ import { IntersectionObserverDirective } from "../../../directives/intersection-
     styleUrl: './artist-card.component.css'
 })
 export class ArtistCard{
-    @Input() data !: Artist;
+    @Input() data !: ArtistDetail;
 
     constructor(){
 

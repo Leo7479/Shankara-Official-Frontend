@@ -28,6 +28,11 @@ section{
     --color-text-light: #D4C5A0;
 }
 
+section > div{
+    max-width: 1200px;
+    margin: auto;
+}
+
 .light-gold-divider{
     background-color: rgba(201, 168, 76, 0.1);
     margin: 1.5rem 0;
@@ -45,6 +50,10 @@ section{
 
 .gold-divider{
     flex-shrink: 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     color: var(--color-gold);
     position: relative;
@@ -58,7 +67,6 @@ section{
     display: inline-block;
     width: 46%;
     height: 1px;
-    transform: translateY(-100%);
     background: linear-gradient(to right, transparent, var(--color-gold), transparent);
     z-index: -1;
 }
@@ -164,5 +172,37 @@ section{
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@keyframes glow{
+    0%{
+        max-width: 0;
+        max-height: 0;
+        opacity: 0;
+    }
+    20%{
+        max-width: 100%;
+        max-height: 100%;
+        opacity: 1;
+    }
+    40%{
+        max-width: 150%;
+        max-height: 150%;
+        opacity: 0.5;
+    }
+    100%{
+        max-width: 200%;
+        max-height: 200%;
+        opacity: 0;
+    }
+}
+
+@keyframes rotate{
+    from{
+        rotate: 0deg;
+    }
+    to{
+        rotate: 360deg;
     }
 }

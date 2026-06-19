@@ -8,8 +8,6 @@ section#about-section{
 div.about-section-container{
     width: 100%;
     height: fit-content;
-    margin: auto;
-    max-width: 1200px;
     display: grid;
     place-items: center;
     grid-template-columns: 1fr 1fr;
