@@ -28,6 +28,18 @@ section{
     --color-text-light: #D4C5A0;
 }
 
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--color-gold);
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--color-charcoal);
+}
+
 section > div{
     max-width: 1200px;
     margin: auto;
