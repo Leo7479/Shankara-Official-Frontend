@@ -1,0 +1,84 @@
+<section id="contact-section">
+    <div class="contact-section-container">
+        <div class="contact-details-container">
+            <span id="tag">Get In Touch</span>
+            <h2 id="heading">Let Us<br> Create Magic</h2>
+            <div class="gold-divider">✦</div>
+            <p class="description">Whether you envision an intimate baithak in your drawing room or a grand concert for
+                thousands, we would be honoured to discuss how Raaga Sangam can make your occasion unforgettable.</p>
+            <div class="contact-container">
+                <div class="contact-email">
+                    <div class="contact-item-logo">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div>
+                        <h4 class="contact-item-heading">Email</h4>
+                        <p class="contact-item-content">shankara.music.official006@gmail.com</p>
+                    </div>
+                </div>
+                <div class="contact-phone">
+                    <div class="contact-item-logo">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <div>
+                        <h4 class="contact-item-heading">Phone</h4>
+                        <p class="contact-item-content">+91-9339437393</p>
+                    </div>
+                </div>
+                <div class="contact-address">
+                    <div class="contact-item-logo">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div>
+                        <h4 class="contact-item-heading">Office</h4>
+                        <p class="contact-item-content">Hooghly, West Bengal</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contact-form-container">
+            <form [formGroup]="formData" (submit)="onFormSubmit()" id="contact-form">
+                <div class="form-name-container" formGroupName="name"> <!--- [formGroup]="formData.get('name')" -->
+                    <div class="form-firstname-container form-input-container">
+                        <label for="form-first-name">First Name</label>
+                        <input id="form-first-name" type="text"
+                            formControlName="firstName"/>
+                    </div>
+                    <div class="form-lastname-container form-input-container">
+                        <label for="form-last-name">Last Name</label>
+                        <input id="form-last-name" type="text" formControlName="lastName" />
+                    </div>
+                </div>
+                <div class="form-email-container form-input-container">
+                    <label for="form-email">Email</label>
+                    <input id="form-email" type="email" 
+                        formControlName="email" />
+                </div>
+                <div class="form-phone-containe form-input-container">
+                    <label for="form-phone">Phone</label>
+                    <input id="form-phone" type="number" formControlName="phone" />
+                </div>
+                <div class="form-natureOfQuery-container form-input-container">
+                    <label for="form-natureOfQuery">Nature Of Query</label>
+                    <select id="form-natureOfQuery" formControlName="natureOfQuery">
+                        <option disabled>Select enquiry type</option>
+                        <option value="private-concert">Private Concert</option>
+                        <option value="wedding-performance">Wedding Performance</option>
+                        <option value="corporate-event">Corporate Event</option>
+                        <option value="cultural-festival">Cultural Festival</option>
+                        <option value="international-tour">International Tour</option>
+                        <option value="media-&-press">Media & Press</option>
+                    </select>
+                </div>
+                <div class="form-message-container form-input-container">
+                    <label for="form-message">Message</label>
+                    <textarea id="form-message" rows="6" cols="50" formControlName="message"></textarea>
+                </div>
+                <button class="primary-button">
+                    <a>Send Message</a>
+                </button>
+            </form>
+        </div>
+    </div>
+
+</section>

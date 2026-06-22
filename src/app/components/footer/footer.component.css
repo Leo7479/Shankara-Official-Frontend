@@ -99,4 +99,9 @@ div.copyright-section{
     justify-content: space-between;
     align-items: center;
     max-width: 1200px;
+    opacity: 0.5;
+}
+
+div.copyright-section > div:last-child{
+    text-align: right;
 }
