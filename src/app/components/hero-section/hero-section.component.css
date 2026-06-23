@@ -1,6 +1,6 @@
 section#hero-section {
     width: 100%;
-    min-height: 100vh;
+    min-height: fit-content;
     overflow-x: hidden;
     position: relative;
     background: radial-gradient(ellipse at 30% 50%, #1A0A2E 0%, #0A0A1A 50%, #0F0505 100%);
@@ -20,7 +20,7 @@ div.hero-details-container {
     width: 100%;
     height: 100%;
     display: grid;
-    max-width: unset;
+    max-width: 1600px;
     position: relative;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto 1fr;
@@ -78,7 +78,7 @@ div.hero-details-container div.hero-details div.action-container {
     display: grid;
     grid-template-columns: 1fr auto;
     grid-template-rows: 1fr;
-    column-gap: 1.2rem;
+    gap: 1.2rem;
     place-items: center;
 }
 
@@ -173,5 +173,31 @@ div.mandala-canvas{
 
     to {
         opacity: 0.75;
+    }
+}
+
+@media (max-width: 768px){
+    div.hero-details-container{
+        grid-template-columns: 1fr;
+    }
+
+    div.hero-details-container div.hero-details span#tag{
+        margin-bottom: 0.75rem;
+    }
+
+    div.hero-details-container div.hero-details h2#heading{
+        margin-bottom: 0;
+    }
+
+    div.hero-details-container div.hero-details h4#heading-tag{
+        margin-bottom: 0.5rem;
+    }
+
+    div.hero-details-container div.hero-details p{
+        margin: 0.5rem auto;
+    }
+
+    div.hero-details-container div.hero-details div.action-container{
+        grid-template-columns: 1fr;
     }
 }

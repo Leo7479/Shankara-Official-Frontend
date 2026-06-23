@@ -129,3 +129,26 @@ div.about-card p{
     line-height: 1.6;
 }
 
+@media (max-width: 768px){
+    div.about-section-container{
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    div.image-container{
+        order: 1;
+    }
+    
+    div.image-container div.foot-tag{
+        bottom: -0.5rem;
+        right: -0.5rem; 
+    }
+
+    div.image-container div.foot-tag > span{
+        font-size: 2rem;
+    }
+
+    div.image-container div.foot-tag > p{
+        font-size: 0.5rem;
+    }
+}

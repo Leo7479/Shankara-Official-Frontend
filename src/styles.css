@@ -174,7 +174,6 @@ section > div{
     animation-delay: var(--delay);
 }
 
-
 @keyframes fadeUp {
     from {
         opacity: 0;
@@ -194,4 +193,12 @@ section > div{
     to{
         rotate: 360deg;
     }
+}
+
+@media (max-width:768px){
+    .primary-button, 
+    .secondary-button{
+        padding: 0.75rem 1.5rem;
+    }
+
 }

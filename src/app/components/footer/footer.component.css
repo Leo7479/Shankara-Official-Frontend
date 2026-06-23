@@ -105,3 +105,15 @@ div.copyright-section{
 div.copyright-section > div:last-child{
     text-align: right;
 }
+
+@media (max-width:768px){
+    div.links-section{
+        grid-template-columns: 1fr;
+        row-gap: 2rem;
+    }
+
+    div.links-section div.links-cards{
+        grid-template-columns: 1fr;
+        row-gap: 2rem;
+    }
+}

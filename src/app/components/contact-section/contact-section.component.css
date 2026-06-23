@@ -92,8 +92,10 @@ i{
 
 div.contact-form-container{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    row-gap: 2rem;
 }
 
 div.contact-form-container > form{
@@ -177,4 +179,29 @@ div.contact-form-container > form{
 
 .form-input-container:has(*.ng-touched.ng-invalid){
     border: 1px solid red;
+}
+
+.important-field{
+    position: relative;
+}
+
+.important-field::after{
+    content: '*';
+    color: red;
+    position: absolute;
+    left: 100%;
+}
+
+div.form-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-ivory);
+}
+
+@media (max-width: 768px){
+    div.contact-section-container{
+        flex-direction: column;
+        row-gap: 2rem;
+    }
 }

@@ -179,3 +179,14 @@ div.show-date-container .show-month-year{
         opacity: 0;
     }
 }
+
+@media (max-width:768px){
+    div.show-card{
+        grid-template-columns: 1fr;
+        row-gap: 1rem;
+    }
+
+    .show-watch-container{
+        justify-content: flex-start;
+    }
+}

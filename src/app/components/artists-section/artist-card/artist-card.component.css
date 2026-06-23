@@ -84,3 +84,21 @@ div.artist-card div.artist-info .artist-description{
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 4;
 }
+
+@media (max-width: 768px){
+    div.artist-card{
+        max-height: 500px;
+    }
+
+    div.artist-card div.artist-info{
+        padding: 0.5rem 1rem;
+    }
+
+    div.artist-card div.artist-info .artist-instruments{
+        margin: 0.3rem 0 0.3rem;
+    }
+
+    div.artist-card div.artist-info .artist-description{
+        -webkit-line-clamp: 3;
+    }
+}

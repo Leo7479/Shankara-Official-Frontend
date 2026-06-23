@@ -1,18 +1,24 @@
 <header>
-    <div id="logo-section">
-        <img id="logo-image" src="assets/images/logo-image.png" alt="Band Logo" />
-        <img id="logo-text" src="assets/images/logo-text.png" alt="Brand Name"/>
-    </div>
-    <div id="nav-section">
-        <nav>
-            <ul>
-                <li><a href="#about-section">About</a></li>
-                <li><a href="#artists-section">Artists</a></li>
-                <li><a href="#shows-section">Shows</a></li>
-                <li><a href="#contact-section">Contact</a></li>
-                <li class="fill-up-button glow"><a routerLink="/reserve-performance">Reserve Performance</a></li>
-            </ul>
-        </nav>
+    <div class="header-container">
+        <div id="logo-section">
+            <img id="logo-image" src="assets/images/logo-image.png" alt="Band Logo" />
+            <img id="logo-text" src="assets/images/logo-text.png" alt="Brand Name" />
+        </div>
+
+        <div class="hamburger-menu" (click)="onHamburgerMenuClick($event, navSection)">
+            <span></span><span></span><span></span>
+        </div>
+        <div #navSection id="nav-section" (click)="onNavSectionClick($event)">
+            <nav>
+                <ul>
+                    <li><a href="#about-section">About</a></li>
+                    <li><a href="#artists-section">Artists</a></li>
+                    <li><a href="#shows-section">Shows</a></li>
+                    <li><a href="#contact-section">Contact</a></li>
+                    <li class="fill-up-button glow"><a routerLink="/reserve-performance">Reserve Performance</a></li>
+                </ul>
+            </nav>
+        </div>
     </div>
 </header>
 
