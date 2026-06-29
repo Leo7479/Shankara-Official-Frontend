@@ -4,15 +4,16 @@
         <div id="reserve-hero">
             <span class="tag">Reserve a Performance</span>
             <h2 class="section-heading">Choose your Evening</h2>
-            <p class="description">Browse our open performance slots, share your event details, and secure your date with a confirmed reservation.</p>
+            <p class="description">Browse our open performance slots, share your event details, and secure your date
+                with a confirmed reservation.</p>
         </div>
         <div class="gold-divider">❧</div>
         <div class="legend">
             <div class="legend-step legend-step-1" [ngClass]="{'active': currentStepNumber===1}">
                 @if(currentStepNumber>1){
-                    <span class="step-done"><i class="fa-solid fa-check"></i></span>
+                <span class="step-done"><i class="fa-solid fa-check"></i></span>
                 }@else{
-                    <span class="step-number">1</span>
+                <span class="step-number">1</span>
                 }
                 <p class="step-title">Select Slot</p>
             </div>
@@ -32,17 +33,128 @@
 
         <div class="content-container">
             @if(currentStepNumber===1){
-                <div class="step-container" id="step-1-container">
-                    <app-calender [bookings]="bookings" (dateSelect)="onDateSelect($event)"></app-calender>
-                    <button class="primary-button" [disabled]="reserveDate===''" [ngClass]="{'disabled': reserveDate===''}" (click)="onProceed()">
-                        <a>Continue To Event Details</a>
+            <div class="step-container" id="step-1-container">
+                <app-calender [bookings]="bookings" (dateSelect)="onDateSelect($event)" [alreadySelectedDate]="reserveDate"></app-calender>
+                <button class="primary-button" [disabled]="reserveDate===''" [ngClass]="{'disabled': reserveDate===''}"
+                    (click)="onProceed()">
+                    <a>Continue To Event Details</a>
+                </button>
+            </div>
+            }
+            @else if(currentStepNumber===2){
+            <div class="step-container" id="step-2-container">
+                <div class="forms-container">
+                    <div class="form-container">
+                        <h2 class="form-heading">Your Details</h2>
+                        <form [formGroup]="reservationDetails" id="personal-details-form">
+                            <div class="form-name-container" formGroupName="fullName">
+                                <!--- [formGroup]="formData.get('name')" -->
+                                <div class="form-firstname-container form-input-container">
+                                    <label for="form-first-name" class="important-field">First Name</label>
+                                    <input id="form-first-name" type="text" formControlName="firstName"
+                                        (input)="handleLabelUp($event)" />
+                                </div>
+                                <div class="form-lastname-container form-input-container">
+                                    <label for="form-last-name">Last Name</label>
+                                    <input id="form-last-name" type="text" formControlName="lastName"
+                                        (input)="handleLabelUp($event)" />
+                                </div>
+                            </div>
+                            <div class="form-email-container form-input-container">
+                                <label for="form-email">Email</label>
+                                <input id="form-email" type="email" formControlName="email"
+                                    (input)="handleLabelUp($event)" />
+                            </div>
+                            <div class="form-phone-containe form-input-container">
+                                <label for="form-phone" class="important-field">Phone</label>
+                                <input id="form-phone" type="number" formControlName="phone"
+                                    (input)="handleLabelUp($event)" />
+                            </div>
+                            <div class="form-alternate-phone-containe form-input-container">
+                                <label for="form-alternate-phone">Phone</label>
+                                <input id="form-alternate-phone" type="number" formControlName="alternatePhone"
+                                    (input)="handleLabelUp($event)" />
+                            </div>
+                        </form>
+                        <h2 class="form-heading">Event Details</h2>
+                        <form [formGroup]="reservationDetails" id="event-details-form">
+                            <div class="form-typeOfEvent-container form-input-container">
+                                <label for="form-typeOfEvent" class="important-field">Type of Event</label>
+                                <select id="form-typeOfEvent" formControlName="typeOfEvent"
+                                    (input)="handleLabelUp($event)">
+                                    <option disabled>Select enquiry type</option>
+                                    <option value="private-concert">Private Concert</option>
+                                    <option value="wedding-performance">Wedding Performance</option>
+                                    <option value="corporate-event">Corporate Event</option>
+                                    <option value="cultural-festival">Cultural Festival</option>
+                                    <option value="international-tour">International Tour</option>
+                                    <option value="media-&-press">Media & Press</option>
+                                </select>
+                            </div>
+                            <div class="venue-name-container form-input-container">
+                                <label for="form-venue-name" class="important-field">Venue Name</label>
+                                <input type="text" id="form-venue-name" formControlName="venueName"
+                                    (input)="handleLabelUp($event)" />
+                            </div>
+                            <div class="expected-audience-container form-input-container">
+                                <label for="form-expected-audience">Expected Audience</label>
+                                <input type="number" id="form-expected-audience" formControlName="expectedAudience"
+                                    (input)="handleLabelUp($event)" />
+                            </div>
+                            <div class="venue-address-container form-input-container">
+                                <label for="form-venue-address" class="important-field">Venue Address</label>
+                                <input type="text" id="form-venue-address" formControlName="venueAddress"
+                                    (input)="handleLabelUp($event)" />
+                            </div>
+                            <div class="venue-address-link-container form-input-container">
+                                <label for="form-venue-address-link">Venue Address Link</label>
+                                <input type="text" id="form-venue-address-link" formControlName="venueAddressLink"
+                                    (input)="handleLabelUp($event)" />
+                            </div>
+                        </form>
+
+                        <h2 class="form-heading">Reservation Details</h2>
+                        <form [formGroup]="reservationDetails" id="reservation-details-form">
+                            <div class="form-message-container form-input-container">
+                                <label for="form-message">Message</label>
+                                <textarea id="form-message" rows="6" cols="50" formControlName="message" (input)="handleLabelUp($event)"></textarea>
+                            </div>
+                        </form>
+                        <span class="foot-tag">A member of our team will reach out within 24 hours of payment to confirm
+                            logistics.</span>
+                    </div>
+                    <div class="overview-container">
+                        <h3 class="heading">Reservation Summary</h3>
+                        <div class="summary">
+                            <div class="summary-row"><span class="label">Performance</span><span>{{ reserveDate }}
+                                </span></div>
+                            <div class="summary-row"><span class="label">Ensemble</span><span>All 6 Artists</span></div>
+                            <div class="summary-row"><span class="label">Reservation Fees</span><span>₹1000</span></div>
+                            <div class="summary-row"><span class="label">Duration</span><span>2 hours</span></div>
+                        </div>
+                        <div class="summary-total">
+                            <span class="label">Due Now</span>
+                            <span class="total-due">₹1000</span>
+                        </div>
+                        <span class="foot-tag">This fee secures your slot. Remaining balance settled directly with the band post-confirmation.</span>
+                    </div>
+                </div>
+
+                <div class="action-container">
+                    <button class="secondary-button" (click)="onBack()">
+                        <a>Back</a>
+                    </button>
+
+                    <button class="primary-button" (click)="onProceed()" [disabled]="reservationDetails.invalid" [ngClass]="{'disabled':reservationDetails.invalid}">
+                        <a>Proceed to Booking</a>
                     </button>
                 </div>
+            </div>
             }
             @else{
-                <div>Working on It</div>
+            <div>Working on It</div>
             }
         </div>
-        
+
     </section>
 </main>

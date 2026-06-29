@@ -22,6 +22,7 @@ export class Calender implements OnInit {
     selectedDate = '';
     private maxBookingYears = 5;
 
+    @Input() alreadySelectedDate !: string;
     @Input() bookings !: string[];
     @Output() dateSelect = new EventEmitter<string>();
 
@@ -33,13 +34,25 @@ export class Calender implements OnInit {
     }
 
     ngOnInit() {
-        let month = this.today.getMonth();
-        let year = this.today.getFullYear();
-        this.renderCalender(month, year);
+        if (this.alreadySelectedDate !== '') {
+            let month = parseInt(this.alreadySelectedDate.split("-")[1]) - 1;
+            let year = parseInt(this.alreadySelectedDate.split("-")[2]);
+            this.renderCalender(month, year);
+            this.selectedDate = this.alreadySelectedDate;
+            this.currentMonth = month + 1;
+            this.currentYear = year;
+        } else {
+            let month = this.today.getMonth();
+            let year = this.today.getFullYear();
+            this.renderCalender(month, year);
+        }
     }
 
     onDateClick(date: string) {
-        if(this.isPast(date)){
+        if (this.isPast(date)) {
+            return;
+        }
+        if(this.bookings.includes(date)){
             return;
         }
         this.selectedDate = date;
@@ -76,16 +89,16 @@ export class Calender implements OnInit {
         return current < today;
     }
 
-    getDateStatus(date: string){
-        if(this.isPast(date)){
+    getDateStatus(date: string) {
+        if (this.isPast(date)) {
             return "Past";
         }
 
-        if(this.bookings.includes(date)){
+        if (this.bookings.includes(date)) {
             return "Reserved";
         }
 
-        if(!this.isPast(date) && !this.bookings.includes(date)){
+        if (!this.isPast(date) && !this.bookings.includes(date)) {
             return "Available";
         }
 

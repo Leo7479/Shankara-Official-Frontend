@@ -112,7 +112,7 @@ div.calender-data div.dates-container div.date-container {
     transition: all 0.25s ease;
 }
 
-div.calender-data div.dates-container div.date-container:hover{
+div.calender-data div.dates-container div.date-container.available:hover{
     background: #c9a84c80;
     transform: translateY(-2px);
     box-shadow: 0 6px 20px 15px rgba(201, 168, 76, 0.12);

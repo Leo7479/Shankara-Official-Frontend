@@ -120,6 +120,214 @@ app-calender{
     width: fit-content;
 }
 
-@media (max-width: 768px){
+.form-container{
+    margin-bottom: 5rem;
+}
 
+.form-heading{
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    color: var(--ivory);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+}
+
+form#personal-details-form{
+    margin-bottom: 2rem;
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-auto-rows: 1fr;
+    row-gap: 2rem;
+}
+
+form#event-details-form{
+    margin-bottom: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 1fr;
+    column-gap: 10px;
+    row-gap: 1.5rem;
+}
+
+form#reservation-details-form{
+    margin-bottom: 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+span.foot-tag{
+    font-size: 0.78rem;
+    color: var(--color-text-light);
+    opacity: 0.6;
+    margin-top: 0.2rem;
+}
+
+.form-name-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+}
+
+.form-input-container{
+    border: 1px solid red;
+    position: relative;
+    border: 1px solid rgba(201, 168, 76, 0.2);
+    z-index: 0;
+    background: rgb(28, 28, 51);
+}
+
+.form-input-container label{
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    background: transparent;
+    transform: translateY(-50%);
+    padding: 0 4px;
+    display: flex;
+    justify-content: start;
+    align-items: center;    
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-text-light);
+    cursor: text;
+    pointer-events: none;
+    z-index: -1;
+    transition: all 0.15s ease-out;
+}
+
+.form-input-container:focus-within,
+.form-input-container.input-label-up{
+    border: 1px solid var(--color-gold);
+}
+
+/* .form-input-container input:focus ~ label -> would have worked if label was after the input element*/ 
+.form-input-container:focus-within label
+{
+    top: 0;
+    background-color: var(--color-gold);
+    color: var(--color-charcoal);
+}
+
+.form-input-container.input-label-up label{
+    top: 0;
+    background-color: var(--color-gold);
+    color: var(--color-charcoal);
+}
+
+.form-input-container input, .form-input-container select, .form-input-container textarea{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 1px solid rgba(201, 168, 76, 0.2);
+    padding: 0.9rem 1.1rem;
+    color: var(--color-ivory);
+    font-family: 'Crimson Pro', serif;
+    font-size: 1rem;
+    outline: none;
+    z-index: 0;
+}
+
+.form-input-container option{
+    background: rgb(28, 28, 51);
+}
+
+.form-input-container:has(*.ng-touched.ng-invalid){
+    border: 1px solid red;
+}
+
+.important-field{
+    position: relative;
+}
+
+.important-field::after{
+    content: '*';
+    color: red;
+    position: absolute;
+    left: 100%;
+}
+
+.form-typeOfEvent-container{
+    grid-column: 1 / -1;
+}
+
+div.forms-container{
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 2rem;
+    width: 100%;
+    height: 100%;
+}
+
+div.overview-container{
+    border: 1px solid rgba(201, 168, 76, 0.3);
+    background: linear-gradient(160deg, rgba(201, 168, 76, 0.05), transparent);
+    padding: 2rem;
+    height: fit-content;
+    position: sticky;
+    top: 10vh;
+}
+
+div.overview-container .heading{
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    color: var(--color-gold-light);
+    margin-bottom: 1.2rem;
+}
+
+div.overview-container div.summary{
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--color-gold);
+}
+
+div.overview-container div.summary .summary-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0.7rem 0;
+    font-size: 0.92rem;
+    border-bottom: 1px solid rgba(201, 168, 76, 0.12);
+}
+
+div.overview-container div.summary .summary-row .label{
+    color: var(--color-text-light);
+}
+
+div.overview-container div.summary-total{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 2rem;
+}
+
+div.overview-container div.summary-total .label{
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+}
+
+div.overview-container div.summary-total .total-due{
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    color: var(--color-ivory);
+}
+
+div.action-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width: 768px){
+    div.forms-container{
+        grid-template-columns: 1fr;
+    }
 }
