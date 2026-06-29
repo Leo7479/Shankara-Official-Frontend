@@ -39,6 +39,7 @@ div#logo-section {
     justify-content: center;
     align-items: center;
     gap: 0.2rem;
+    cursor: pointer;
 }
 
 div#logo-section img#logo-image {

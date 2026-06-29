@@ -1,0 +1,156 @@
+div.calender-container {
+    width: 100%;
+    height: 100%;
+    min-height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+div.legend {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    color: var(--color-ivory);
+    margin-bottom: 1rem;
+}
+
+div.legend div.date-info {
+    display: flex;
+    gap: 0.5rem;
+}
+
+div.legend div.date-info select,
+div.legend div.date-info option {
+    background: var(--color-navy);
+    color: var(--color-ivory);
+    font-size: 1rem;
+}
+
+div.legend div.date-info select {
+    font-size: 2.5rem;
+    outline: none;
+    border: 1px solid #ffffff55;
+    padding: 0.5rem 1rem;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+div.calender-tutorial {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 2rem;
+    row-gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+div.calender-tutorial div.calender-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 5px;
+    font-size: 0.85rem;
+    letter-spacing: 0.02rem;
+    color: var(--color-text-light);
+}
+
+div.calender-tutorial div.calender-info span {
+    padding: 7px;
+    border-radius: 50%;
+}
+
+div.calender-tutorial div.calender-info-available span {
+    background-color: var(--color-gold);
+}
+
+div.calender-tutorial div.calender-info-reserved span {
+    background-color: var(--color-crimson);
+}
+
+div.calender-tutorial div.calender-info-selection span {
+    background-color: var(--color-green);
+}
+
+div.calender-data div.days-container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 1fr;
+}
+
+div.calender-data div.days-container div.day-container {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.15rem;
+    color: var(--color-gold);
+    opacity: 0.7;
+    text-align: center;
+    padding-bottom: 0.6rem;
+}
+
+div.calender-data div.dates-container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.5rem;
+}
+
+div.calender-data div.dates-container div.date-gap-container,
+div.calender-data div.dates-container div.date-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    aspect-ratio: 1;
+}
+
+div.calender-data div.dates-container div.date-container {
+    border: 1px solid rgba(201, 168, 76, 0.1);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.25s ease;
+}
+
+div.calender-data div.dates-container div.date-container:hover{
+    background: #c9a84c80;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px 15px rgba(201, 168, 76, 0.12);
+}
+
+div.calender-data div.dates-container div.date-container.available:hover{
+    background-color: #c9a84c80;
+}
+
+div.calender-data div.dates-container div.date-container .date-status{
+    font-size: 0.75rem;
+}
+
+div.calender-data div.dates-container div.date-container.past {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+div.calender-data div.dates-container div.date-container.available {
+    border-color: rgba(201, 168, 76, 0.35);
+    background: rgba(201, 168, 76, 0.03);
+}
+
+div.calender-data div.dates-container div.date-container.reserved {
+    border-color: var(--color-crimson);
+    background-color: #430d0d8c;
+    cursor: not-allowed;
+}
+
+div.calender-data div.dates-container div.date-container.selection {
+    border-color: var(--color-green);
+    background-color: #18571857;
+}
+
+@media (max-width: 768px) {
+
+    div.legend div.date-info select {
+        font-size: 1.5rem;
+        padding: 0.5rem 0.5rem;
+    }
+}

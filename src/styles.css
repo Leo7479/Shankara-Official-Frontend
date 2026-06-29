@@ -1,15 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html, body{
+html,
+body {
     scroll-behavior: smooth;
 }
 
-section{
+section {
     padding: 7rem 2rem;
 }
 
@@ -19,6 +20,7 @@ section{
     --color-gold-pale: #F5E6B8;
     --color-crimson: #8B1A1A;
     --color-crimson-deep: #5C0F0F;
+    --color-crimson-light: #430d0d;
     --color-dark: #060610;
     --color-navy: #0A0A1A;
     --color-navy-mid: #0F0F2A;
@@ -26,6 +28,8 @@ section{
     --color-ivory: #F5EDD6;
     --color-ivory-warm: #FAF3E0;
     --color-text-light: #D4C5A0;
+    --color-green: #008000;
+    --color-green-light: #004000;
 }
 
 ::-webkit-scrollbar {
@@ -40,17 +44,17 @@ section{
     background-color: var(--color-charcoal);
 }
 
-section > div{
+section>div {
     max-width: 1200px;
     margin: auto;
 }
 
-.light-gold-divider{
+.light-gold-divider {
     background-color: rgba(201, 168, 76, 0.1);
     margin: 1.5rem 0;
 }
 
-.divider-horizontal{
+.divider-horizontal {
     width: 100%;
     height: 2px;
 }
@@ -60,7 +64,7 @@ section > div{
     height: 100%;
 }
 
-.gold-divider{
+.gold-divider {
     flex-shrink: 0;
     position: relative;
     display: flex;
@@ -74,7 +78,8 @@ section > div{
     margin: 20px 0;
 }
 
-.gold-divider::before, .gold-divider::after{
+.gold-divider::before,
+.gold-divider::after {
     content: '';
     display: inline-block;
     width: 46%;
@@ -83,7 +88,7 @@ section > div{
     z-index: -1;
 }
 
-.primary-button{
+.primary-button {
     padding: 1rem 2.5rem;
     border: 1px solid var(--color-gold-light);
     background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-light) 50%, var(--color-gold) 100%);
@@ -101,14 +106,20 @@ section > div{
     place-items: center;
 }
 
-.primary-button:hover{
+.primary-button.disabled {
+    cursor: not-allowed;
+    opacity: 0.65;
+}
+
+.primary-button:not(.disabled):hover {
     background-position: 100% 0;
     box-shadow: 0 8px 32px rgba(201, 168, 76, 0.35);
 }
 
-.secondary-button{
+.secondary-button {
     padding: 1rem 2.5rem;
-    border: 1px solid rgba(201, 168, 76, 0.5);;
+    border: 1px solid rgba(201, 168, 76, 0.5);
+    ;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     color: var(--color-ivory);
@@ -121,7 +132,7 @@ section > div{
     text-decoration: none;
 }
 
-.secondary-button:hover{
+.secondary-button:hover {
     color: var(--color-gold);
     border-color: var(--color-gold);
 }
@@ -186,18 +197,20 @@ section > div{
     }
 }
 
-@keyframes rotate{
-    from{
+@keyframes rotate {
+    from {
         rotate: 0deg;
     }
-    to{
+
+    to {
         rotate: 360deg;
     }
 }
 
-@media (max-width:768px){
-    .primary-button, 
-    .secondary-button{
+@media (max-width:768px) {
+
+    .primary-button,
+    .secondary-button {
         padding: 0.75rem 1.5rem;
     }
 

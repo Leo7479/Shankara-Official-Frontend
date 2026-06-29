@@ -1,1 +1,48 @@
-<p>reserve-performance works!</p>
+<app-header></app-header>
+<main>
+    <section id="reserve-section">
+        <div id="reserve-hero">
+            <span class="tag">Reserve a Performance</span>
+            <h2 class="section-heading">Choose your Evening</h2>
+            <p class="description">Browse our open performance slots, share your event details, and secure your date with a confirmed reservation.</p>
+        </div>
+        <div class="gold-divider">❧</div>
+        <div class="legend">
+            <div class="legend-step legend-step-1" [ngClass]="{'active': currentStepNumber===1}">
+                @if(currentStepNumber>1){
+                    <span class="step-done"><i class="fa-solid fa-check"></i></span>
+                }@else{
+                    <span class="step-number">1</span>
+                }
+                <p class="step-title">Select Slot</p>
+            </div>
+            <div class="legend-step legend-step-2" [ngClass]="{'active': currentStepNumber===2}">
+                <span class="step-number">2</span>
+                <p class="step-title">Event Details</p>
+            </div>
+            <div class="legend-step legend-step-3" [ngClass]="{'active': currentStepNumber===3}">
+                <span class="step-number">3</span>
+                <p class="step-title">Payment</p>
+            </div>
+            <div class="legend-step legend-step-4" [ngClass]="{'active': currentStepNumber===4}">
+                <span class="step-number">4</span>
+                <p class="step-title">Confirmed</p>
+            </div>
+        </div>
+
+        <div class="content-container">
+            @if(currentStepNumber===1){
+                <div class="step-container" id="step-1-container">
+                    <app-calender [bookings]="bookings" (dateSelect)="onDateSelect($event)"></app-calender>
+                    <button class="primary-button" [disabled]="reserveDate===''" [ngClass]="{'disabled': reserveDate===''}" (click)="onProceed()">
+                        <a>Continue To Event Details</a>
+                    </button>
+                </div>
+            }
+            @else{
+                <div>Working on It</div>
+            }
+        </div>
+        
+    </section>
+</main>

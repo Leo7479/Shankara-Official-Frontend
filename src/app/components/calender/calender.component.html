@@ -1,0 +1,53 @@
+<div class="calender-container">
+    <div class="legend">
+        <div class="date-info">
+            <div class="month-container">
+                <select #monthSelect (change)="onMonthYearChange(monthSelect, yearSelect)">
+                    @for(month of months; track $index){
+                        <option [value]="$index+1" [selected]="$index+1===currentMonth">{{month}}</option>
+                    }
+                </select>
+            </div>
+            , 
+            <div class="year-container">
+                <select #yearSelect (change)="onMonthYearChange(monthSelect, yearSelect)">
+                    @for(year of years; track $index){
+                        <option [value]="year" [selected]="year===currentYear">{{year}}</option>
+                    }
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="calender-tutorial">
+        <div class="calender-info calender-info-available">
+            <span></span>
+            <p>Available</p>
+        </div>
+        <div class="calender-info calender-info-reserved">
+            <span></span>
+            <p>Reserved</p>
+        </div>
+        <div class="calender-info calender-info-selection">
+            <span></span>
+            <p>Your Selection</p>
+        </div>
+    </div>
+    <div class="calender-data">
+        <div class="days-container">
+            @for(day of days;track $index){
+                <div class="day-container">{{ day }}</div>
+            }
+        </div>
+        <div class="dates-container">
+            @for(gap of gaps;track $index){
+                <div class="date-gap-container"></div>
+            }
+            @for(date of dates; track date){
+                <div class="date-container" [ngClass]="{'past':isPast(date), 'reserved': bookings.includes(date), 'selection': date===selectedDate, 'available': !isPast(date) && date!==selectedDate && !bookings.includes(date)}" (click)="onDateClick(date)">
+                    <span class="date">{{date.split("-")[0]}}</span>
+                    <span class="date-status">{{ getDateStatus(date) }}</span>
+                </div>
+            }
+        </div>
+    </div>
+</div>

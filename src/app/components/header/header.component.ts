@@ -1,5 +1,5 @@
-import { Component } from "@angular/core";
-import { RouterLink } from "@angular/router";
+import { Component, inject } from "@angular/core";
+import { Router, RouterLink } from "@angular/router";
 
 @Component({
     selector: 'app-header',
@@ -9,6 +9,12 @@ import { RouterLink } from "@angular/router";
     styleUrl: './header.component.css'
 })
 export class Header {
+    private router = inject(Router);
+
+    onLogoClick(){
+        this.router.navigateByUrl("/");
+    }
+
     onHamburgerMenuClick(e: Event, navRef: HTMLDivElement) {
         if (navRef.style.left === '' || navRef.style.left === '200%') {
             console.log("opening");
